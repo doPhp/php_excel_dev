@@ -1,17 +1,17 @@
 {
-    "name": "soluble/php_excel_dev",
+    "name": "doPhp/php_excel_dev",
     "description": "LibXL - php_excel development stubs",
     "license": "MIT",
     "keywords": [
         "php_excel",
         "libxl"
     ],
-    "homepage": "https://github.com/belgattitude/php_excel_dev",
+    "homepage": "https://github.com/doPhp/php_excel_dev",
     "type": "library",
     "authors": [
         {
-            "name": "Sébastien Vanvelthem",
-            "homepage": "https://github.com/belgattitude"
+            "name": "Darren Odden",
+            "homepage": "https://github.com/do-io"
         }
     ],
     "bin": [
