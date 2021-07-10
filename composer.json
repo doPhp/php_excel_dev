@@ -1,5 +1,5 @@
 {
-    "name": "do-php/php_excel_dev",
+    "name": "do-php/php8_excel_dev",
     "description": "LibXL - php_excel development stubs",
     "license": "MIT",
     "keywords": [
@@ -19,7 +19,7 @@
         "bin/check_phpexcel_install.php"
     ],
     "require": {
-        "php": "^7.1||^8.0"
+        "php": "^8.0"
     },
     "require-dev" : {
         "captainhook/plugin-composer": "^4.0",
