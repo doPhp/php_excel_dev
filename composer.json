@@ -19,7 +19,7 @@
         "bin/check_phpexcel_install.php"
     ],
     "require": {
-        "php": "^8.0"
+        "php": "^7.4||^8.0"
     },
     "require-dev" : {
         "captainhook/plugin-composer": "^4.0",
