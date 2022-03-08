@@ -51,7 +51,7 @@ class ExcelFilterColumn
      *
      * @return int
      */
-    public function index()
+    public function index(): int
     {
     }
 
@@ -62,7 +62,7 @@ class ExcelFilterColumn
      *
      * @return int One of ExcelFilterColumn::FILTER_* constants
      */
-    public function filterType()
+    public function filterType(): int
     {
     }
 
@@ -73,7 +73,7 @@ class ExcelFilterColumn
      *
      * @return int
      */
-    public function filterSize()
+    public function filterSize(): int
     {
     }
 
@@ -86,7 +86,7 @@ class ExcelFilterColumn
      *
      * @return string filter value
      */
-    public function filter($index)
+    public function filter(int $index): string
     {
     }
 
@@ -97,7 +97,7 @@ class ExcelFilterColumn
      *
      * @param string $filterValue
      */
-    public function addFilter($filterValue)
+    public function addFilter(string $filterValue)
     {
     }
 
@@ -108,7 +108,7 @@ class ExcelFilterColumn
      *
      * @return array with keys "value"(float), "top"(bool) and "percent"(bool)
      */
-    public function getTop10()
+    public function getTop10(): array
     {
     }
 
@@ -123,7 +123,7 @@ class ExcelFilterColumn
      *
      * @return bool
      */
-    public function setTop10($value, $top = true, $percent = false)
+    public function setTop10(float $value, bool $top = true, bool $percent = false): bool
     {
     }
 
@@ -134,7 +134,7 @@ class ExcelFilterColumn
      *
      * @return array with keys "operator_1"(int), "value_1"(string), "operator_2"(int), "value_2"(string) and "andOp"(bool)
      */
-    public function getCustomFilter()
+    public function getCustomFilter(): array
     {
     }
 
@@ -146,10 +146,10 @@ class ExcelFilterColumn
      * @param int    $op1   - one of ExcelFilterColumn::OPERATOR_* constants - operator used by the filter comparison in the first filter criteria;
      * @param string $v1    - value used in the first filter criteria;
      * @param int    $op2   - one of ExcelFilterColumn::OPERATOR_* constants - operator used by the filter comparison in the second filter criteria; (optional, default = -1)
-     * @param string $v2    - value used in the second filter criteria; (optional, default = null)
+     * @param null|string $v2    - value used in the second filter criteria; (optional, default = null)
      * @param bool   $andOp - flag indicating whether the two criterias have an "and" relationship. True indicates "and", false indicates "or". (optional, default = false)
      */
-    public function setCustomFilter($op1, $v1, $op2 = -1, $v2 = null, $andOp = false)
+    public function setCustomFilter(int $op1, string $v1, int $op2 = -1, null|string $v2 = null, bool $andOp = false)
     {
     }
 
@@ -160,7 +160,7 @@ class ExcelFilterColumn
      *
      * @return bool
      */
-    public function clear()
+    public function clear(): bool
     {
     }
 

@@ -139,7 +139,7 @@ class ExcelSheet
      *
      * @return ExcelSheet The worksheet created
      */
-    public function __construct(ExcelBook $book, $name)
+    public function __construct(ExcelBook $book, string $name)
     {
     }
 
@@ -157,7 +157,7 @@ class ExcelSheet
      * @param int    $col_first         0-based
      * @param int    $col_last          0-based
      * @param string $val_1             the first value for relational operator
-     * @param string $val_2             the second value for VALIDATION_OP_BETWEEN or VALIDATION_OP_NOTBETWEEN operator
+     * @param null|string $val_2             the second value for VALIDATION_OP_BETWEEN or VALIDATION_OP_NOTBETWEEN operator
      * @param bool   $allow_blank       (optional, default = true) a boolean value indicating whether the data validation treats empty or blank entries as valid, 'true' means empty entries are OK and do not violate the validation constraints
      * @param bool   $hide_dropdown     (optional, default = false) a boolean value indicating whether to display the dropdown combo box for a list type data validation (ExcelSheet::VALIDATION_TYPE_LIST)
      * @param bool   $show_inputmessage (optional, default = true) a boolean value indicating whether to display the input prompt message
@@ -168,7 +168,13 @@ class ExcelSheet
      * @param string $error             (optional, default = '') message text of error alert
      * @param int    $error_style       - (optional, default = \ExcelSheet::VALIDATION_ERRSTYLE_WARNING) one of the ExcelSheet::VALIDATION_ERRSTYLE_* constants
      */
-    public function addDataValidation($type, $op, $row_first, $row_last, $col_first, $col_last, $val_1, $val_2 = null, $allow_blank = true, $hide_dropdown = false, $show_inputmessage = true, $show_errormessage = true, $prompt_title = '', $prompt = '', $error_title = '', $error = '', $error_style = self::VALIDATION_ERRSTYLE_WARNING)
+    public function addDataValidation(int $type, int $op, int $row_first, int $row_last,
+                                      int $col_first, int $col_last, string $val_1,
+                                      null|string $val_2 = null, bool $allow_blank = true,
+                                      bool $hide_dropdown = false, bool $show_inputmessage = true,
+                                      bool $show_errormessage = true, string $prompt_title = '',
+                                      string $prompt = '', string $error_title = '',
+                                      string $error = '', int $error_style = self::VALIDATION_ERRSTYLE_WARNING)
     {
     }
 
@@ -187,7 +193,7 @@ class ExcelSheet
      * @param int    $col_first         0-based
      * @param int    $col_last          0-based
      * @param float  $val_1             the first value for relational operator
-     * @param float  $val_2             the second value for VALIDATION_OP_BETWEEN or VALIDATION_OP_NOTBETWEEN operator
+     * @param null|float  $val_2             the second value for VALIDATION_OP_BETWEEN or VALIDATION_OP_NOTBETWEEN operator
      * @param bool   $allow_blank       (optional, default = true) a boolean value indicating whether the data validation treats empty or blank entries as valid, 'true' means empty entries are OK and do not violate the validation constraints
      * @param bool   $hide_dropdown     (optional, default = false) a boolean value indicating whether to display the dropdown combo box for a list type data validation (ExcelSheet::VALIDATION_TYPE_LIST)
      * @param bool   $show_inputmessage (optional, default = true) a boolean value indicating whether to display the input prompt message
@@ -198,7 +204,13 @@ class ExcelSheet
      * @param string $error             (optional, default = '') message text of error alert
      * @param int    $error_style       - (optional, default = \ExcelSheet::VALIDATION_ERRSTYLE_WARNING) one of the ExcelSheet::VALIDATION_ERRSTYLE_* constants
      */
-    public function addDataValidationDouble($type, $op, $row_first, $row_last, $col_first, $col_last, $val_1, $val_2 = null, $allow_blank = true, $hide_dropdown = false, $show_inputmessage = true, $show_errormessage = true, $prompt_title = '', $prompt = '', $error_title = '', $error = '', $error_style = self::VALIDATION_ERRSTYLE_WARNING)
+    public function addDataValidationDouble(int $type, int $op, int $row_first, int $row_last,
+                                            int $col_first, int $col_last, float $val_1,
+                                            null|float $val_2 = null, bool $allow_blank = true,
+                                            bool $hide_dropdown = false, bool $show_inputmessage = true,
+                                            bool $show_errormessage = true, string $prompt_title = '',
+                                            string $prompt = '', string $error_title = '', string $error = '',
+                                            int $error_style = self::VALIDATION_ERRSTYLE_WARNING)
     {
     }
 
@@ -213,7 +225,7 @@ class ExcelSheet
      * @param int    $col_first 0-based
      * @param int    $col_last  0-based
      */
-    public function addHyperlink($hyperlink, $row_first, $row_last, $col_first, $col_last)
+    public function addHyperlink(string $hyperlink, int $row_first, int $row_last, int $col_first, int $col_last)
     {
     }
 
@@ -230,7 +242,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function addIgnoredError($error, $row_first = 0, $col_first = 0, $row_last = 0, $col_last = 0)
+    public function addIgnoredError(int $error, int $row_first = 0, int $col_first = 0, int $row_last = 0, int $col_last = 0): bool
     {
     }
 
@@ -251,7 +263,8 @@ class ExcelSheet
      * @param int $x_offset   (optional, default=0)
      * @param int $y_offset   (optional, default=0)
      */
-    public function addPictureDim($row, $column, $picture_id, $width, $height, $x_offset = 0, $y_offset = 0)
+    public function addPictureDim(int $row, int $column, int $picture_id, int $width, int $height,
+                                  int $x_offset = 0, int $y_offset = 0)
     {
     }
 
@@ -271,7 +284,7 @@ class ExcelSheet
      * @param int   $x_offset   (optional, default = 0)
      * @param int   $y_offset   (optional, default = 0)
      */
-    public function addPictureScaled($row, $column, $picture_id, $scale, $x_offset = 0, $y_offset = 0)
+    public function addPictureScaled(int $row, int $column, int $picture_id, float $scale, int $x_offset = 0, int $y_offset = 0)
     {
     }
 
@@ -284,7 +297,7 @@ class ExcelSheet
      *
      * @return array with keys "row"(int), "column"(int), "col_relative"(bool), "row_relative"(bool)
      */
-    public function addrToRowCol($cell_reference)
+    public function addrToRowCol(string $cell_reference): array
     {
     }
 
@@ -295,7 +308,7 @@ class ExcelSheet
      *
      * @return ExcelAutoFilter
      */
-    public function autoFilter()
+    public function autoFilter(): ExcelAutoFilter
     {
     }
 
@@ -306,7 +319,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function applyFilter()
+    public function applyFilter(): bool
     {
     }
 
@@ -317,7 +330,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function removeFilter()
+    public function removeFilter(): bool
     {
     }
 
@@ -331,7 +344,7 @@ class ExcelSheet
      *
      * @return ExcelFormat
      */
-    public function cellFormat($row, $column)
+    public function cellFormat(int $row, int $column): ExcelFormat
     {
     }
 
@@ -345,7 +358,7 @@ class ExcelSheet
      *
      * @return int One of ExcelSheet::CELLTYPE_* constants
      */
-    public function cellType($row, $column)
+    public function cellType(int $row, int $column): int
     {
     }
 
@@ -359,7 +372,7 @@ class ExcelSheet
      * @param int $column_start 0-based column number
      * @param int $column_end   0-based column number
      */
-    public function clear($row_start, $row_end, $column_start, $column_end)
+    public function clear(int $row_start, int $row_end, int $column_start, int $column_end)
     {
     }
 
@@ -375,7 +388,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function setPrintArea($row_start, $row_end, $column_start, $column_end)
+    public function setPrintArea(int $row_start, int $row_end, int $column_start, int $column_end): bool
     {
     }
 
@@ -386,7 +399,7 @@ class ExcelSheet
      *
      * @return bool|array with keys "row_start"(int), "row_end"(int), "col_start"(int) and "col_end"(int)
      */
-    public function printArea()
+    public function printArea(): bool|array
     {
     }
 
@@ -397,7 +410,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function clearPrintArea()
+    public function clearPrintArea(): bool
     {
     }
 
@@ -411,7 +424,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function clearPrintRepeats()
+    public function clearPrintRepeats(): bool
     {
     }
 
@@ -424,7 +437,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function colHidden($column)
+    public function colHidden(int $column): bool
     {
     }
 
@@ -441,7 +454,7 @@ class ExcelSheet
      *
      * @return float
      */
-    public function colWidth($column)
+    public function colWidth(int $column): float
     {
     }
 
@@ -455,7 +468,7 @@ class ExcelSheet
      * @param int $row_to      0-based row number
      * @param int $column_to   0-based column number
      */
-    public function copy($row_from, $column_from, $row_to, $column_to)
+    public function copy(int $row_from, int $column_from, int $row_to, int $column_to)
     {
     }
 
@@ -468,7 +481,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function delHyperlink($index)
+    public function delHyperlink(int $index): bool
     {
     }
 
@@ -480,11 +493,11 @@ class ExcelSheet
      * @see ExcelSheet::setNamedRange()
      *
      * @param string $name
-     * @param int    $scope_id
+     * @param null|int    $scope_id
      *
      * @return bool
      */
-    public function delNamedRange($name, $scope_id = null)
+    public function delNamedRange(string $name, null|int $scope_id = null): bool
     {
     }
 
@@ -498,7 +511,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function deleteMerge($row, $column)
+    public function deleteMerge(int $row, int $column): bool
     {
     }
 
@@ -511,7 +524,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function delMergeByIndex($index)
+    public function delMergeByIndex(int $index): bool
     {
     }
 
@@ -524,7 +537,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function displayGridlines()
+    public function displayGridlines(): bool
     {
     }
 
@@ -539,7 +552,7 @@ class ExcelSheet
      *
      * @return int
      */
-    public function firstCol()
+    public function firstCol(): int
     {
     }
 
@@ -554,7 +567,7 @@ class ExcelSheet
      *
      * @return int
      */
-    public function firstRow()
+    public function firstRow(): int
     {
     }
 
@@ -569,7 +582,7 @@ class ExcelSheet
      *
      * @return string
      */
-    public function footer()
+    public function footer(): string
     {
     }
 
@@ -583,7 +596,7 @@ class ExcelSheet
      *
      * @return float
      */
-    public function footerMargin()
+    public function footerMargin(): float
     {
     }
 
@@ -598,7 +611,7 @@ class ExcelSheet
      *
      * @return bool true=below, false=above
      */
-    public function getGroupSummaryBelow()
+    public function getGroupSummaryBelow(): bool
     {
     }
 
@@ -613,7 +626,7 @@ class ExcelSheet
      *
      * @return bool true=right, false=left
      */
-    public function getGroupSummaryRight()
+    public function getGroupSummaryRight(): bool
     {
     }
 
@@ -626,7 +639,7 @@ class ExcelSheet
      *
      * @return int
      */
-    public function getHorPageBreak($index)
+    public function getHorPageBreak(int $index): int
     {
     }
 
@@ -637,7 +650,7 @@ class ExcelSheet
      *
      * @return int
      */
-    public function getHorPageBreakSize()
+    public function getHorPageBreakSize(): int
     {
     }
 
@@ -647,11 +660,11 @@ class ExcelSheet
      * Gets the named range coordinates by index.
      *
      * @param int $index
-     * @param int $scope_id (optional, default = null) index of sheet or -1 for Workbook
+     * @param null|int $scope_id (optional, default = null) index of sheet or -1 for Workbook
      *
      * @return array with keys "row_first"(int), "row_last"(int), "col_first"(int), "col_last"(int), "hidden"(bool), "scope"(int)
      */
-    public function getIndexRange($index, $scope_id = null)
+    public function getIndexRange(int $index, null|int $scope_id = null): array
     {
     }
 
@@ -665,7 +678,7 @@ class ExcelSheet
      *
      * @return array Four integers as keys "row_first", "row_last", "col_first", and "col_last"
      */
-    public function getMerge($row, $column)
+    public function getMerge(int $row, int $column): array
     {
     }
 
@@ -675,11 +688,11 @@ class ExcelSheet
      * Gets the named range coordinates by name, returns false if range is not found.
      *
      * @param string $name
-     * @param int    $scope_id (optional, default=null)
+     * @param null|int    $scope_id (optional, default=null)
      *
      * @return array with keys "row_first"(int), "row_last"(int), "col_first"(int), "col_last"(int), "hidden"(bool)
      */
-    public function getNamedRange($name, $scope_id = null)
+    public function getNamedRange(string $name, null|int $scope_id = null): array
     {
     }
 
@@ -690,7 +703,7 @@ class ExcelSheet
      *
      * @return int
      */
-    public function getNumPictures()
+    public function getNumPictures(): int
     {
     }
 
@@ -703,7 +716,7 @@ class ExcelSheet
      *
      * @return array with keys "picture_index"(int), "row_top"(int), "col_left"(int), "row_bottom"(int), "col_right"(int), "width"(int), "height"(int), "offset_x"(int), "offset_y"(int)
      */
-    public function getPictureInfo($index)
+    public function getPictureInfo(int $index): array
     {
     }
 
@@ -714,7 +727,7 @@ class ExcelSheet
      *
      * @return array with keys "width"(int), "height"(int)
      */
-    public function getPrintFit()
+    public function getPrintFit(): array
     {
     }
 
@@ -725,7 +738,7 @@ class ExcelSheet
      *
      * @return int
      */
-    public function getRightToLeft()
+    public function getRightToLeft(): int
     {
     }
 
@@ -736,7 +749,7 @@ class ExcelSheet
      *
      * @return array with keys "row"(int), "column"(int)
      */
-    public function getTopLeftView()
+    public function getTopLeftView(): array
     {
     }
 
@@ -749,7 +762,7 @@ class ExcelSheet
      *
      * @return int
      */
-    public function getVerPageBreak($index)
+    public function getVerPageBreak(int $index): int
     {
     }
 
@@ -760,7 +773,7 @@ class ExcelSheet
      *
      * @return int
      */
-    public function getVerPageBreakSize()
+    public function getVerPageBreakSize(): int
     {
     }
 
@@ -775,7 +788,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function groupCols($column_start, $column_end, $collapse = false)
+    public function groupCols(int $column_start, int $column_end, bool $collapse = false): bool
     {
     }
 
@@ -790,7 +803,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function groupRows($row_start, $row_end, $collapse = false)
+    public function groupRows(int $row_start, int $row_end, bool $collapse = false): bool
     {
     }
 
@@ -805,7 +818,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function hcenter()
+    public function hcenter(): bool
     {
     }
 
@@ -820,7 +833,7 @@ class ExcelSheet
      *
      * @return string
      */
-    public function header()
+    public function header(): string
     {
     }
 
@@ -835,7 +848,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function hidden($hide)
+    public function hidden(bool $hide): bool
     {
     }
 
@@ -848,7 +861,7 @@ class ExcelSheet
      *
      * @return array
      */
-    public function hyperlink($index)
+    public function hyperlink(int $index): array
     {
     }
 
@@ -859,7 +872,7 @@ class ExcelSheet
      *
      * @return int
      */
-    public function hyperlinkSize()
+    public function hyperlinkSize(): int
     {
     }
 
@@ -872,7 +885,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function isHidden()
+    public function isHidden(): bool
     {
     }
 
@@ -883,7 +896,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function isLicensed()
+    public function isLicensed(): bool
     {
     }
 
@@ -897,7 +910,7 @@ class ExcelSheet
      *
      * @return float
      */
-    public function headerMargin()
+    public function headerMargin(): float
     {
     }
 
@@ -911,7 +924,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function horPageBreak($row, $break)
+    public function horPageBreak(int $row, bool $break): bool
     {
     }
 
@@ -925,7 +938,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function insertCol($column_start, $column_end)
+    public function insertCol(int $column_start, int $column_end): bool
     {
     }
 
@@ -939,7 +952,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function insertRow($row_start, $row_end)
+    public function insertRow(int $row_start, int $row_end): bool
     {
     }
 
@@ -953,7 +966,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function isDate($row, $column)
+    public function isDate(int $row, int $column): bool
     {
     }
 
@@ -967,7 +980,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function isFormula($row, $column)
+    public function isFormula(int $row, int $column): bool
     {
     }
 
@@ -980,7 +993,7 @@ class ExcelSheet
      *
      * @return bool true for landscape, false for portrait
      */
-    public function landscape()
+    public function landscape(): bool
     {
     }
 
@@ -995,7 +1008,7 @@ class ExcelSheet
      *
      * @return int
      */
-    public function lastCol()
+    public function lastCol(): int
     {
     }
 
@@ -1010,7 +1023,7 @@ class ExcelSheet
      *
      * @return int
      */
-    public function lastRow()
+    public function lastRow(): int
     {
     }
 
@@ -1026,7 +1039,7 @@ class ExcelSheet
      *
      * @return float
      */
-    public function marginBottom()
+    public function marginBottom(): float
     {
     }
 
@@ -1042,7 +1055,7 @@ class ExcelSheet
      *
      * @return float
      */
-    public function marginLeft()
+    public function marginLeft(): float
     {
     }
 
@@ -1058,7 +1071,7 @@ class ExcelSheet
      *
      * @return float
      */
-    public function marginRight()
+    public function marginRight(): float
     {
     }
 
@@ -1074,7 +1087,7 @@ class ExcelSheet
      *
      * @return float
      */
-    public function marginTop()
+    public function marginTop(): float
     {
     }
 
@@ -1087,7 +1100,7 @@ class ExcelSheet
      *
      * @return array
      */
-    public function merge($index)
+    public function merge(int $index): array
     {
     }
 
@@ -1098,7 +1111,7 @@ class ExcelSheet
      *
      * @return int
      */
-    public function mergeSize()
+    public function mergeSize(): int
     {
     }
 
@@ -1111,7 +1124,7 @@ class ExcelSheet
      *
      * @return string
      */
-    public function name()
+    public function name(): string
     {
     }
 
@@ -1122,7 +1135,7 @@ class ExcelSheet
      *
      * @return int
      */
-    public function namedRangeSize()
+    public function namedRangeSize(): int
     {
     }
 
@@ -1135,7 +1148,7 @@ class ExcelSheet
      *
      * @return int One of ExcelSheet::PAPER_* constants
      */
-    public function paper()
+    public function paper(): int
     {
     }
 
@@ -1148,7 +1161,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function printGridlines()
+    public function printGridlines(): bool
     {
     }
 
@@ -1161,7 +1174,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function printHeaders()
+    public function printHeaders(): bool
     {
     }
 
@@ -1174,7 +1187,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function protect()
+    public function protect(): bool
     {
     }
 
@@ -1186,12 +1199,12 @@ class ExcelSheet
      *
      * @param int         $row          0-based row number
      * @param int         $column       0-based column number
-     * @param ExcelFormat $format       (optional, default=null)
+     * @param null|ExcelFormat $format       (optional, default=null)
      * @param bool        $read_formula (optional, default=true)
      *
      * @return mixed
      */
-    public function read($row, $column, &$format = null, $read_formula = true)
+    public function read(int $row, int $column, null|ExcelFormat &$format = null, bool $read_formula = true): mixed
     {
     }
 
@@ -1202,12 +1215,12 @@ class ExcelSheet
      *
      * @param int  $column       0-based column number
      * @param int  $row_start    (optional, default=0)
-     * @param int  $row_end      (optional, default=null)
+     * @param null|int  $row_end      (optional, default=null)
      * @param bool $read_formula (optional, default=true)
      *
      * @return array or false if invalid row/column positions
      */
-    public function readCol($column, $row_start = 0, $row_end = null, $read_formula = true)
+    public function readCol(int $column, int $row_start = 0, null|int $row_end = null, bool $read_formula = true): array
     {
     }
 
@@ -1221,7 +1234,7 @@ class ExcelSheet
      *
      * @return string
      */
-    public function readComment($row, $column)
+    public function readComment(int $row, int $column): string
     {
     }
 
@@ -1237,7 +1250,7 @@ class ExcelSheet
      *
      * @return array or false if invalid row/column positions
      */
-    public function readRow($row, $column_start = 0, $column_end = -1, $read_formula = true)
+    public function readRow(int $row, int $column_start = 0, int $column_end = -1, bool $read_formula = true): array
     {
     }
 
@@ -1251,7 +1264,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function removeCol($column_start, $column_end)
+    public function removeCol(int $column_start, int $column_end): bool
     {
     }
 
@@ -1264,7 +1277,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function removeDataValidations()
+    public function removeDataValidations(): bool
     {
     }
 
@@ -1278,7 +1291,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function removeRow($row_start, $row_end)
+    public function removeRow(int $row_start, int $row_end): bool
     {
     }
 
@@ -1294,7 +1307,7 @@ class ExcelSheet
      *
      * @return string
      */
-    public function rowColToAddr($row, $column, $row_relative = true, $col_relative = true)
+    public function rowColToAddr(int $row, int $column, bool $row_relative = true, bool $col_relative = true): string
     {
     }
 
@@ -1311,7 +1324,7 @@ class ExcelSheet
      *
      * @return float
      */
-    public function rowHeight($row)
+    public function rowHeight(int $row): float
     {
     }
 
@@ -1324,7 +1337,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function rowHidden($row)
+    public function rowHidden(int $row): bool
     {
     }
 
@@ -1337,7 +1350,7 @@ class ExcelSheet
      * @param int         $column 0-based column number
      * @param ExcelFormat $format
      */
-    public function setCellFormat($row, $column, $format)
+    public function setCellFormat(int $row, int $column, ExcelFormat $format)
     {
     }
 
@@ -1351,7 +1364,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function setColHidden($column, $hidden)
+    public function setColHidden(int $column, bool $hidden): bool
     {
     }
 
@@ -1372,7 +1385,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function setColWidth($column_start, $column_end, $width, $hidden = false, $format = null)
+    public function setColWidth(int $column_start, int $column_end, float $width, bool $hidden = false, null|ExcelFormat $format = null): bool
     {
     }
 
@@ -1389,7 +1402,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function setAutofitArea($row_start = 0, $row_end = -1, $column_start = 0, $column_end = -1)
+    public function setAutofitArea(int $row_start = 0, int $row_end = -1, int $column_start = 0, int $column_end = -1): bool
     {
     }
 
@@ -1402,7 +1415,7 @@ class ExcelSheet
      *
      * @param bool $value
      */
-    public function setDisplayGridlines($value)
+    public function setDisplayGridlines(bool $value)
     {
     }
 
@@ -1420,7 +1433,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function setFooter($footer, $margin)
+    public function setFooter(string $footer, float $margin): bool
     {
     }
 
@@ -1437,7 +1450,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function setGroupSummaryBelow($direction)
+    public function setGroupSummaryBelow(bool $direction): bool
     {
     }
 
@@ -1454,7 +1467,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function setGroupSummaryRight($direction)
+    public function setGroupSummaryRight(bool $direction): bool
     {
     }
 
@@ -1467,7 +1480,7 @@ class ExcelSheet
      *
      * @param bool $value
      */
-    public function setHCenter($value)
+    public function setHCenter(bool $value)
     {
     }
 
@@ -1480,7 +1493,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function setHidden($value)
+    public function setHidden(bool $value): bool
     {
     }
 
@@ -1498,7 +1511,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function setHeader($header, $margin)
+    public function setHeader(string $header, float $margin): bool
     {
     }
 
@@ -1511,7 +1524,7 @@ class ExcelSheet
      *
      * @param bool $value true for landscape, false for portrait
      */
-    public function setLandscape($value)
+    public function setLandscape(bool $value)
     {
     }
 
@@ -1526,7 +1539,7 @@ class ExcelSheet
      *
      * @param float $margin
      */
-    public function setMarginBottom($margin)
+    public function setMarginBottom(float $margin)
     {
     }
 
@@ -1541,7 +1554,7 @@ class ExcelSheet
      *
      * @param float $margin
      */
-    public function setMarginLeft($margin)
+    public function setMarginLeft(float $margin)
     {
     }
 
@@ -1556,7 +1569,7 @@ class ExcelSheet
      *
      * @param float $margin
      */
-    public function setMarginRight($margin)
+    public function setMarginRight(float $margin)
     {
     }
 
@@ -1571,7 +1584,7 @@ class ExcelSheet
      *
      * @param float $margin
      */
-    public function setMarginTop($margin)
+    public function setMarginTop(float $margin)
     {
     }
 
@@ -1587,7 +1600,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function setMerge($row_start, $row_end, $column_start, $column_end)
+    public function setMerge(int $row_start, int $row_end, int $column_start, int $column_end): bool
     {
     }
 
@@ -1600,7 +1613,7 @@ class ExcelSheet
      *
      * @param string $name
      */
-    public function setName($name)
+    public function setName(string $name)
     {
     }
 
@@ -1616,11 +1629,11 @@ class ExcelSheet
      * @param int    $column_from 0-based column number
      * @param int    $row_to      0-based row number
      * @param int    $column_to   0-based column number
-     * @param int    $scope_id
+     * @param null|int    $scope_id
      *
      * @return bool
      */
-    public function setNamedRange($name, $row_from, $row_to, $column_from, $column_to, $scope_id = null)
+    public function setNamedRange(string $name, int $row_from, int $row_to, int $column_from, int $column_to, null|int $scope_id = null): bool
     {
     }
 
@@ -1633,7 +1646,7 @@ class ExcelSheet
      *
      * @param int $paper One of ExcelSheet::PAPER_* constants
      */
-    public function setPaper($paper)
+    public function setPaper(int $paper)
     {
     }
 
@@ -1647,7 +1660,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function setPrintFit($wPages, $hPages)
+    public function setPrintFit(int $wPages, int $hPages): bool
     {
     }
 
@@ -1660,7 +1673,7 @@ class ExcelSheet
      *
      * @param bool $value
      */
-    public function setPrintGridlines($value)
+    public function setPrintGridlines(bool $value)
     {
     }
 
@@ -1673,7 +1686,7 @@ class ExcelSheet
      *
      * @param bool $value
      */
-    public function setPrintHeaders($value)
+    public function setPrintHeaders(bool $value)
     {
     }
 
@@ -1690,7 +1703,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function setPrintRepeatCols($column_start, $column_end)
+    public function setPrintRepeatCols(int $column_start, int $column_end): bool
     {
     }
 
@@ -1703,7 +1716,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function setTabColor($color = 0)
+    public function setTabColor(int $color = 0): bool
     {
     }
 
@@ -1715,7 +1728,7 @@ class ExcelSheet
      *
      * @return bool|array with keys "col_start"(int) and "col_end"(int)
      */
-    public function printRepeatCols()
+    public function printRepeatCols(): bool|array
     {
     }
 
@@ -1732,7 +1745,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function setPrintRepeatRows($row_start, $row_end)
+    public function setPrintRepeatRows(int $row_start, int $row_end): bool
     {
     }
 
@@ -1744,7 +1757,7 @@ class ExcelSheet
      *
      * @return bool|array with keys "row_start"(int) and "row_end"(int)
      */
-    public function printRepeatRows()
+    public function printRepeatRows(): bool|array
     {
     }
 
@@ -1759,7 +1772,7 @@ class ExcelSheet
      * @param string $password           (optional, default="")
      * @param int    $enhancedProtection ExcelSheet::PROT_ALL (optional, default=ExcelSheet::PROT_DEFAULT)
      */
-    public function setProtect($value, $password = '', $enhancedProtection = self::PROT_DEFAULT)
+    public function setProtect(bool $value, string $password = '', int $enhancedProtection = self::PROT_DEFAULT)
     {
     }
 
@@ -1772,7 +1785,7 @@ class ExcelSheet
      *
      * @param int $mode
      */
-    public function setRightToLeft($mode)
+    public function setRightToLeft(int $mode)
     {
     }
 
@@ -1787,12 +1800,12 @@ class ExcelSheet
      *
      * @param int         $row    0-based row number
      * @param float       $height
-     * @param ExcelFormat $format (optional, default=null)
+     * @param null|ExcelFormat $format (optional, default=null)
      * @param bool        $hidden (optional, default=false)
      *
      * @return bool
      */
-    public function setRowHeight($row, $height, $format = null, $hidden = false)
+    public function setRowHeight(int $row, float $height, ExcelFormat $format = null, bool $hidden = false): bool
     {
     }
 
@@ -1806,7 +1819,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function setRowHidden($row, $hidden)
+    public function setRowHidden(int $row, bool $hidden): bool
     {
     }
 
@@ -1820,7 +1833,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function setTopLeftView($row, $column)
+    public function setTopLeftView(int $row, int $column): bool
     {
     }
 
@@ -1833,7 +1846,7 @@ class ExcelSheet
      *
      * @param bool $value
      */
-    public function setVCenter($value)
+    public function setVCenter(bool $value)
     {
     }
 
@@ -1844,7 +1857,7 @@ class ExcelSheet
      *
      * @param int $value
      */
-    public function setZoom($value)
+    public function setZoom(int $value)
     {
     }
 
@@ -1855,7 +1868,7 @@ class ExcelSheet
      *
      * @param int $value
      */
-    public function setZoomPrint($value)
+    public function setZoomPrint(int $value)
     {
     }
 
@@ -1868,7 +1881,7 @@ class ExcelSheet
      *
      * @return array
      */
-    public function splitInfo()
+    public function splitInfo(): array
     {
     }
 
@@ -1880,7 +1893,7 @@ class ExcelSheet
      * @param int $row    0-based row number
      * @param int $column 0-based column number
      */
-    public function splitSheet($row, $column)
+    public function splitSheet(int $row, int $column)
     {
     }
 
@@ -1893,7 +1906,7 @@ class ExcelSheet
      *
      * @return array with keys "name"(string), "row_first"(int), "col_first"(int), "row_last"(int), "col_last"(int), "header_row_count"(int) and "totals_row_count"(int)
      */
-    public function table($index = 0)
+    public function table(int $index = 0): array
     {
     }
 
@@ -1904,7 +1917,7 @@ class ExcelSheet
      *
      * @return int
      */
-    public function tableSize()
+    public function tableSize(): int
     {
     }
 
@@ -1919,7 +1932,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function vcenter()
+    public function vcenter(): bool
     {
     }
 
@@ -1933,7 +1946,7 @@ class ExcelSheet
      *
      * @return bool
      */
-    public function verPageBreak($column, $break)
+    public function verPageBreak(int $column, bool $break): bool
     {
     }
 
@@ -1945,12 +1958,12 @@ class ExcelSheet
      * @param int         $row       0-based row number
      * @param int         $column    0-based column number
      * @param mixed       $data
-     * @param ExcelFormat $format    (optional, default=null)
+     * @param null|ExcelFormat $format    (optional, default=null)
      * @param int         $data_type (optional, default=-1) One of ExcelFormat::AS_* constants
      *
      * @return bool
      */
-    public function write($row, $column, $data, $format = null, $data_type = -1)
+    public function write(int $row, int $column, mixed $data, null|ExcelFormat $format = null, int $data_type = -1): bool
     {
     }
 
@@ -1962,12 +1975,12 @@ class ExcelSheet
      * @param int         $column    0-based column number
      * @param array       $data
      * @param int         $row_start (optional, default=0)
-     * @param ExcelFormat $format    (optional, default=null)
+     * @param null|ExcelFormat $format    (optional, default=null)
      * @param int         $data_type (optional, default=-1) One of ExcelFormat::AS_* constants
      *
      * @return bool
      */
-    public function writeCol($column, $data, $row_start = 0, $format = null, $data_type = -1)
+    public function writeCol(int $column, array $data, int $row_start = 0, null|ExcelFormat $format = null, int $data_type = -1): bool
     {
     }
 
@@ -1983,7 +1996,7 @@ class ExcelSheet
      * @param int    $width
      * @param int    $height
      */
-    public function writeComment($row, $column, $comment, $author, $width, $height)
+    public function writeComment(int $row, int $column, string $comment, string $author, int $width, int $height)
     {
     }
 
@@ -1995,11 +2008,11 @@ class ExcelSheet
      * @param int         $row    (optional, default = 0)
      * @param int         $col    (optional, default = 0)
      * @param int         $error  - one of ExcelSheet::ERRORTYPE_* constants  (optional, default = 0)
-     * @param ExcelFormat $format (optional, default = null)
+     * @param null|ExcelFormat $format (optional, default = null)
      *
      * @return bool
      */
-    public function writeError($row = 0, $col = 0, $error = 0, $format = null)
+    public function writeError(int $row = 0, int $col = 0, int $error = 0, null|ExcelFormat $format = null): bool
     {
     }
 
@@ -2011,11 +2024,11 @@ class ExcelSheet
      * @param int         $row          0-based row number
      * @param array       $data
      * @param int         $column_start (optional, default=0)
-     * @param ExcelFormat $format       (optional, default=null)
+     * @param null|ExcelFormat $format       (optional, default=null)
      *
      * @return bool
      */
-    public function writeRow($row, $data, $column_start = 0, $format = null)
+    public function writeRow(int $row, array $data, int $column_start = 0, null|ExcelFormat $format = null): bool
     {
     }
 
@@ -2026,7 +2039,7 @@ class ExcelSheet
      *
      * @return int
      */
-    public function zoom()
+    public function zoom(): int
     {
     }
 
@@ -2037,7 +2050,7 @@ class ExcelSheet
      *
      * @return int
      */
-    public function zoomPrint()
+    public function zoomPrint(): int
     {
     }
 
