@@ -35,7 +35,7 @@ class ExcelAutoFilter
      *
      * @return array with keys "row_first"(int), "row_last"(int), "col_first"(int), "col_last"(int)
      */
-    public function getRef()
+    public function getRef(): array
     {
     }
 
@@ -49,7 +49,7 @@ class ExcelAutoFilter
      * @param int $col_first 0-based (optional, default = 0)
      * @param int $col_last  0-based (optional, default = 0)
      */
-    public function setRef($row_first = 0, $row_last = 0, $col_first = 0, $col_last = 0)
+    public function setRef(int $row_first = 0, int $row_last = 0, int $col_first = 0, int $col_last = 0)
     {
     }
 
@@ -62,7 +62,7 @@ class ExcelAutoFilter
      *
      * @return ExcelFilterColumn
      */
-    public function column($colId)
+    public function column(int $colId): ExcelFilterColumn
     {
     }
 
@@ -73,7 +73,7 @@ class ExcelAutoFilter
      *
      * @return int
      */
-    public function columnSize()
+    public function columnSize(): int
     {
     }
 
@@ -86,7 +86,7 @@ class ExcelAutoFilter
      *
      * @return ExcelFilterColumn
      */
-    public function columnByIndex($index)
+    public function columnByIndex(int $index): ExcelFilterColumn
     {
     }
 
@@ -97,7 +97,7 @@ class ExcelAutoFilter
      *
      * @return array with keys "row_first"(int), "col_first"(int), "row_last"(int), "col_last"(int)
      */
-    public function getSortRange()
+    public function getSortRange(): array
     {
     }
 
@@ -108,7 +108,7 @@ class ExcelAutoFilter
      *
      * @return array with keys "column_index"(int), "descending"(bool),
      */
-    public function getSort()
+    public function getSort(): array
     {
     }
 
@@ -122,7 +122,7 @@ class ExcelAutoFilter
      *
      * @return bool
      */
-    public function setSort($columnIndex, $descending)
+    public function setSort(int $columnIndex, bool $descending): bool
     {
     }
 

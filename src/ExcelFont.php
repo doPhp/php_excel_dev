@@ -44,11 +44,11 @@ class ExcelFont
     /**
      * Get, or set if bold is on or off.
      *
-     * @param bool $bold (optional, default=null)
+     * @param null|bool $bold (optional, default=null)
      *
      * @return bool
      */
-    public function bold($bold = null)
+    public function bold(bool|null $bold = null): bool
     {
     }
 
@@ -57,11 +57,11 @@ class ExcelFont
     /**
      * Get, or set the font color.
      *
-     * @param int $color (optional, default=null) One of ExcelFormat::COLOR_* constants
+     * @param null|int $color (optional, default=null) One of ExcelFormat::COLOR_* constants
      *
      * @return int
      */
-    public function color($color = null)
+    public function color(null|int $color = null): int
     {
     }
 
@@ -70,11 +70,11 @@ class ExcelFont
     /**
      * Get, or set if italics are on or off.
      *
-     * @param bool $italics (optional, default=null)
+     * @param null|bool $italics (optional, default=null)
      *
      * @return bool
      */
-    public function italics($italics = null)
+    public function italics(null|bool $italics = null): bool
     {
     }
 
@@ -83,11 +83,11 @@ class ExcelFont
     /**
      * Get, or set the font script mode.
      *
-     * @param int $mode (optional, default=null) One of ExcelFont::NORMAL, ::SUBSCRIPT, or ::SUPERSCRIPT
+     * @param null|int $mode (optional, default=null) One of ExcelFont::NORMAL, ::SUBSCRIPT, or ::SUPERSCRIPT
      *
      * @return int
      */
-    public function mode($mode = null)
+    public function mode(null|int $mode = null): int
     {
     }
 
@@ -96,11 +96,11 @@ class ExcelFont
     /**
      * Get, or set the font name.
      *
-     * @param string $font_name (optional, default=null)
+     * @param null|string $font_name (optional, default=null)
      *
      * @return string
      */
-    public function name($font_name = null)
+    public function name($font_name = null): string
     {
     }
 
@@ -109,11 +109,11 @@ class ExcelFont
     /**
      * Get, or set the font size.
      *
-     * @param int $size (optional, default=null)
+     * @param null|int $size (optional, default=null)
      *
      * @return int The current font size
      */
-    public function size($size = null)
+    public function size(null|int $size = null): int
     {
     }
 
@@ -122,11 +122,11 @@ class ExcelFont
     /**
      * Get, or set if strike-through is on or off.
      *
-     * @param bool $strike (optional, default=null)
+     * @param null|bool $strike (optional, default=null)
      *
      * @return bool
      */
-    public function strike($strike = null)
+    public function strike(null|bool $strike = null): bool
     {
     }
 
@@ -135,11 +135,11 @@ class ExcelFont
     /**
      * Get, or set the underline style.
      *
-     * @param int $underline (optional, default=null) One of ExcelFont::UNDERLINE_* constants
+     * @param null|int $underline (optional, default=null) One of ExcelFont::UNDERLINE_* constants
      *
      * @return int
      */
-    public function underline($underline = null)
+    public function underline(null|int $underline = null): int
     {
     }
 
